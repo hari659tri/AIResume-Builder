@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 function ExperiencePreview({resumeInfo}) {
   return (
@@ -31,6 +32,23 @@ function ExperiencePreview({resumeInfo}) {
         ))}
     </div>
   )
+}
+ExperiencePreview.propTypes = {
+  resumeInfo: PropTypes.shape({
+    themeColor: PropTypes.string,
+    Experience: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string,
+        companyName: PropTypes.string,
+        city: PropTypes.string,
+        state: PropTypes.string,
+        startDate: PropTypes.string,
+        currentlyWorking: PropTypes.bool,
+        endDate: PropTypes.string,
+        workSummery: PropTypes.string,
+      })
+    ),
+  }),
 }
 
 export default ExperiencePreview

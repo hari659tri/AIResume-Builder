@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 function SummeryPreview({resumeInfo}) {
   return (
@@ -6,6 +7,11 @@ function SummeryPreview({resumeInfo}) {
         {resumeInfo?.summery}
     </p>
   )
+}
+SummeryPreview.propTypes = {
+  resumeInfo: PropTypes.shape({
+    summery: PropTypes.string,
+  }),
 }
 
 export default SummeryPreview

@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 import { UserButton, useUser } from '@clerk/clerk-react'
 
 function Header() {
-    const { user, isSignedIn } = useUser();
+    const { isSignedIn } = useUser();
     return (
         <div className='p-3 px-5 flex justify-between shadow-md'>
              <Link to={'/dashboard'}>
-            <img src='/logo.svg' className='cursor-pointer' width={100} height={100} />
+            <img src='/logo.svg' className='cursor-pointer' width={50} height={40} />
             </Link>
             {isSignedIn ?
                 <div className='flex gap-2 items-center'>

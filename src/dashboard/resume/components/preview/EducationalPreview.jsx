@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 function EducationalPreview({resumeInfo}) {
   return (
@@ -31,5 +32,21 @@ function EducationalPreview({resumeInfo}) {
     </div>
   )
 }
+EducationalPreview.propTypes = {
+  resumeInfo: PropTypes.shape({
+    themeColor: PropTypes.string,
+    education: PropTypes.arrayOf(
+      PropTypes.shape({
+        universityName: PropTypes.string,
+        degree: PropTypes.string,
+        major: PropTypes.string,
+        startDate: PropTypes.string,
+        endDate: PropTypes.string,
+        description: PropTypes.string,
+      })
+    ),
+  }),
+}
+
 
 export default EducationalPreview
